@@ -1,0 +1,66 @@
+# ––––––––––––––––––––––––––––– Build generated –––––––––––––––––––––––––––––
+
+build/
+DerivedData/
+
+# ––––––––––––––––––––––––––––– Various settings ––––––––––––––––––––––––––––
+
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# ––––––––––––––––––––––––––– Obj-C/Swift specific ––––––––––––––––––––––––––
+
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ––––––––––––––––––––––––––––––– Playgrounds –––––––––––––––––––––––––––––––
+
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+
+Packages/
+Package.pins
+Package.resolved
+.build/
+.swiftpm
+
+# –––––––––––––––––––––––––––––––– CocoaPods ––––––––––––––––––––––––––––––––
+
+Pods/
+
+# –––––––––––––––––––––––––––––––– Fastlane –––––––––––––––––––––––––––––––––
+# It is recommended to not store the screenshots in the git repo. Instead, 
+# use fastlane to re-generate the screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# –––––––––––––––––––––––––––––––––– Other ––––––––––––––––––––––––––––––––––
+
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+.DS_Store
+.vscode
+
+# ––––––––––––––––––––––––––––––––– Generated ––––––––––––––––––––––––––––––––––
+
+*.xcodeproj
+*.xcworkspace
+Sources/Resources/Resources.generated.swift
+iOS/Info.plist

@@ -1,0 +1,42 @@
+name: Project
+
+options:
+  createIntermediateGroups: true
+  indentWidth: 2
+  tabWidth: 2
+  bundleIdPrefix: org-domain.org-host
+
+settings:
+  MARKETING_VERSION: "1.0.0"
+  CURRENT_PROJECT_VERSION: "1"
+
+packages:
+  app-package:
+    path: ./
+
+targets:
+  MyTarget:
+    type: application
+    platform: iOS
+    deploymentTarget: 13.0
+    sources: 
+      - path: iOS
+    dependencies:
+      - package: app-package
+        product: AppFeature
+    preBuildScripts:
+      - name: Generate resources boilerplate
+        script: "\"$SRCROOT/Scripts/generate_resources.sh\"\n"
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundleDisplayName: MyApp
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: AppFeature.SceneDelegate
