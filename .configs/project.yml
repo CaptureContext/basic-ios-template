@@ -1,0 +1,7 @@
+options:
+  bundleIdPrefix: org-domain.org-host
+  indentWidth: 2
+
+packages:
+  app-package:
+    path: ./

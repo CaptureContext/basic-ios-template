@@ -1,0 +1,11 @@
+name: Previews
+
+include:
+  - ../.configs/preview.yml
+
+targets:
+  MainFeaturePreview:
+    templates: 
+      - PreviewApp
+    templateAttributes:
+      preview_package: MainFeature

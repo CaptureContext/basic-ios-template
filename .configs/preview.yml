@@ -1,30 +1,33 @@
-name: Project
+options:
+  bundleIdPrefix: org-domain.org-host
+  indentWidth: 2
 
-include:
-  - .configs/project.yml
-  - Previews/previews.yml
+packages:
+  app-package:
+    path: ./
 
 settings:
   MARKETING_VERSION: "1.0.0"
   CURRENT_PROJECT_VERSION: "1"
 
-targets:
-  MyTarget:
+targetTemplates:
+  PreviewApp:
     type: application
     platform: iOS
     deploymentTarget: 13.0
     sources:
-        - path: iOS
+      - path: ../Previews/Shared
+      - path: ../Previews/${preview_package}
     dependencies:
       - package: app-package
-        product: AppFeature
+        product: ${preview_package}
     preBuildScripts:
       - name: Generate resources boilerplate
         script: "\"$SRCROOT/Scripts/generate_resources.sh\"\n"
     info:
-      path: iOS/Info.plist
+      path: ../Previews/${preview_package}/Info.plist
       properties:
-        CFBundleDisplayName: MyApp
+        CFBundleDisplayName: ${preview_package}
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchStoryboardName: LaunchScreen

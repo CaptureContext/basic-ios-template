@@ -1,12 +1,12 @@
 # basic-ios-template
 
-SwiftPM-based template for a modularized app
+SwiftPM-based template for a highly modularized applications
 
 ### Getting started
 
-1. Create a folder for your app and navigate to it
+1. Fork the repo as a template.
 
-> `CaptureContext` is used as a name for the app in readme examples, you are free to choose your own
+2. Create a local folder for your app and navigate to it
 
 ```bash
 mkdir CaptureContext
@@ -16,18 +16,18 @@ cd CaptureContext
 2. Clone the template, rename cloned folder to `App` and navigate to it
 
 ```bash
-git clone https://github.com/capturecontext/basic-ios-template.git
-mv basic-ios-template App
+git clone https://github.com/<your_profile>/<your_app>-ios.git
+mv <your_app>-ios App # rename cloned folder to 'App'
 cd App
 ```
 
 > You can choose any name or avoid nesting, but we recommend to follow the example to get the best result 😌
 
-3. Rename [project.yml contents](project.yml) accordingly to your needs
+3. Rename [project.yml](project.yml), [.config/project.yml](.config/project.yml) and [.config/preview.yml](.config/preview.yml) contents accordingly to your needs
 
 - bundleIdPrefix: `org-domain.org-host` to your bundleID prefix
-- targets: `MyTarget` to `capturecontext-ios` 
-- info.properties.CFBundleDisplayName: `MyApp` to `CaptureContext`
+- targets: `MyTarget` to `<your_app>-ios` 
+- info.properties.CFBundleDisplayName: `MyApp` to `<your_app>`
 
 4. Bootstrap the environment
 
@@ -37,15 +37,7 @@ make bootstrap
 
 > See Makefile for details
 
-Than you can delete `.git` folder and init a clean one for your project
-
-```bash
-rm -rf .git
-git init
-git commit -m 'Initial commit'
-```
-
-Now you are ready for the actual development 😎
+Than you can commit changes and you are ready for the actual development 😎
 
 ```bash
 open Package.xcworkspace

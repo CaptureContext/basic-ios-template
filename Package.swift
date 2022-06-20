@@ -8,30 +8,41 @@ let package = Package(
     .iOS(.v13)
   ],
   dependencies: [
-    .package(path: "Dependencies"),
-    .package(path: "Extensions")
+    .package(path: "./Dependencies"),
+    .package(path: "./Extensions")
   ],
   producibleTargets: [
 
-    // MARK: A
+    // MARK: - A
 
     .target(
       name: "AppFeature",
       product: .library(.static),
       dependencies: [
-        .target(name: "AppUI")
+        .target(name: "MainFeature")
       ]
     ),
 
     .target(
       name: "AppUI",
+      product: .library(.static),
       dependencies: [
         .localUIExtensions,
         .target(name: "Resources")
       ]
     ),
 
-    // MARK: R
+    // MARK: - M
+
+    .target(
+      name: "MainFeature",
+      product: .library(.static),
+      dependencies: [
+        .target(name: "AppUI")
+      ]
+    ),
+
+    // MARK: - R
     
     .target(
       name: "Resources",

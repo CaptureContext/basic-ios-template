@@ -1,4 +1,23 @@
-import AppUI
+import UIKit
+
+extension UIApplication {
+  fileprivate static var initialViewController: UIViewController!
+  
+  public func launch(
+    initialViewController: UIViewController,
+    appDelegate: UIApplicationDelegate = AppDelegate()
+  ) {
+    UIApplication.initialViewController = initialViewController
+    UIApplication.shared.delegate = appDelegate
+    
+    _ = UIApplicationMain(
+      CommandLine.argc,
+      CommandLine.unsafeArgv,
+      nil,
+      nil
+    )
+  }
+}
 
 public class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   public var window: UIWindow?
@@ -14,7 +33,7 @@ public class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(windowScene: windowScene)
     self.window = window
     
-    window.rootViewController = AppViewController()
+    window.rootViewController = UIApplication.initialViewController
     
     window.makeKeyAndVisible()
   }
