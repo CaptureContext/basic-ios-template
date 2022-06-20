@@ -1,6 +1,6 @@
 # basic-ios-template
 
-SwiftPM-based template for a highly modularized applications
+ [![SwiftPM 5.6](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
 
 ### Getting started
 
@@ -9,25 +9,25 @@ SwiftPM-based template for a highly modularized applications
 2. Create a local folder for your app and navigate to it
 
 ```bash
-mkdir CaptureContext
-cd CaptureContext
+mkdir <YourAppName>
+cd <YourAppName>
 ```
 
 2. Clone the template, rename cloned folder to `App` and navigate to it
 
 ```bash
-git clone https://github.com/<your_profile>/<your_app>-ios.git
-mv <your_app>-ios App # rename cloned folder to 'App'
+git clone https://github.com/<your-profile>/<your-app-name>-ios.git
+mv <your-app-name>-ios App
 cd App
 ```
 
-> You can choose any name or avoid nesting, but we recommend to follow the example to get the best result 😌
+> You can choose any name or avoid nesting, but we recommend to follow the example (including the case) to get the best result 😌
 
 3. Rename [project.yml](project.yml), [.config/project.yml](.config/project.yml) and [.config/preview.yml](.config/preview.yml) contents accordingly to your needs
 
 - bundleIdPrefix: `org-domain.org-host` to your bundleID prefix
-- targets: `MyTarget` to `<your_app>-ios` 
-- info.properties.CFBundleDisplayName: `MyApp` to `<your_app>`
+- targets: `MyTarget` to `<your-app-name>-ios` 
+- info.properties.CFBundleDisplayName: `MyApp` to `<YourAppName>`
 
 4. Bootstrap the environment
 
@@ -65,6 +65,14 @@ Sources { // Main modules
   Resources // Contains resources and generated boilerplate
 }
 ```
+
+
+
+> **Note:**
+>
+> _Scripts can be improved later so we advice you to keep an eye on the repo and a tracking reference to our `main` branch to keep your infrastructure up to date_ 🚀
+
+
 
 ### Recommended dependencies
 
