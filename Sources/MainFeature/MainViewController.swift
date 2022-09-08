@@ -9,17 +9,31 @@ public final class MainViewController: UITabBarController {
     setViewControllers(
       [
         UIHostingController(
-          rootView: Text("First")
+          rootView: VStack {
+            Image.resource(.usgsUnsplash)
+              .resizable()
+              .aspectRatio(1, contentMode: .fill)
+              .frame(width: 200, height: 200)
+              .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            Text("First")
+              .fontWeight(.semibold)
+              .foregroundColor(Color.white)
+              .padding(.vertical, 6)
+              .padding(.horizontal, 32)
+              .background(Color.black)
+              .clipShape(Capsule())
+          }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
               LinearGradient(
                 colors: [
-                  .blue,
-                  .green
+                  .orange,
+                  .red
                 ],
                 startPoint: .top,
                 endPoint: .bottom
               )
+              .overlay(Color.black.opacity(0.1))
               .edgesIgnoringSafeArea(.all)
             )
         ).configured { $0
@@ -31,6 +45,8 @@ public final class MainViewController: UITabBarController {
         },
         UIHostingController(
           rootView: Text("Second")
+            .fontWeight(.semibold)
+            .foregroundColor(Color.black)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
               LinearGradient(

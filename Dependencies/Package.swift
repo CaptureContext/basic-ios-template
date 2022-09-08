@@ -11,7 +11,7 @@ let package = Package(
     .package(path: "../Extensions"),
     .package(
       url: "https://github.com/capturecontext/swift-package-resources.git",
-      .upToNextMajor(from: "1.0.0")
+      .upToNextMajor(from: "2.0.0")
     ),
   ],
   producibleTargets: [

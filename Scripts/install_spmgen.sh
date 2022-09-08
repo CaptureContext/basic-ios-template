@@ -10,6 +10,7 @@ source "${SCRIPT_DIR_PATH}/.core/constants.sh"
 # CONFIG
 TOOL_NAME="spmgen"
 TOOL_OWNER="capturecontext"
+TOOL_VERSION="2.0.0"
 
 # CONSTANTS
 TOOL_INSTALL_PATH="${TOOLS_INSTALL_PATH}/${TOOL_NAME}-tmp"
@@ -34,6 +35,10 @@ force_cd "${TOOL_DOWNLOAD_DIR}"
 print ⬇️ "Fetching ${TOOL_NAME}..."
 git clone "https://github.com/${TOOL_OWNER}/${TOOL_NAME}.git"
 cd "${TOOL_NAME}"
+
+print 🔧 "Switching to specified version..."
+git fetch --all --tags
+git checkout tags/${TOOL_VERSION} -b local
 
 print 🔨 "Building ${TOOL_NAME}..."
 build_swift_product "${TOOL_NAME}"

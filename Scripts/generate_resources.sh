@@ -15,6 +15,6 @@ if ! $( is_installed "${TOOL}" ); then "${SCRIPT_DIR_PATH}/install_spmgen.sh"; f
 "$TOOL" resources "${SCRIPT_DIR_PATH}/../Sources/Resources/Resources" \
   --output "${SCRIPT_DIR_PATH}/../Sources/Resources/Resources.generated.swift" \
   --indentor " " \
-  --indentation-width 2
+  --tab-size 2
 
 print_success "Did generate resources"

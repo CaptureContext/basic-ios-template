@@ -62,7 +62,7 @@ Sources { // Main modules
   <#SomeFeature#>Feature // Any other feature
   AppUI // App-specific UI components
   APIClient // Service module example
-  Resources // Contains resources and generated boilerplate
+  Resources // Contains shared resources and generated boilerplate, but you can declare target-specific resources too, see https://github.com/capturecontext/spmgen
 }
 ```
 

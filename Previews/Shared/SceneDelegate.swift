@@ -3,8 +3,8 @@ import UIKit
 extension UIApplication {
   fileprivate static var initialViewController: UIViewController!
   
-  public func launch(
-    initialViewController: UIViewController,
+  public func launchPreview(
+    of initialViewController: UIViewController,
     appDelegate: UIApplicationDelegate = AppDelegate()
   ) {
     UIApplication.initialViewController = initialViewController

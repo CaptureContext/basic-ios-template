@@ -33,4 +33,4 @@ targets:
           UISceneConfigurations:
             UIWindowSceneSessionRoleApplication:
               - UISceneConfigurationName: Default Configuration
-                UISceneDelegateClassName: ${target_name}.SceneDelegate
+                UISceneDelegateClassName: AppFeature.SceneDelegate
