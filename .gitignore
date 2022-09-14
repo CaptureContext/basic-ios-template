@@ -1,3 +1,22 @@
+# ––––––––––––––––––––––––––––––––– Generated ––––––––––––––––––––––––––––––––––
+
+*.xcodeproj
+*.xcworkspace
+Sources/**/Resources.generated.swift
+iOS/Info.plist
+
+# –––––––––––––––––––––––––––––––– Scripts –––––––––––––––––––––––––––––––––
+
+Scripts/.bin
+
+# ––––––––––––––––––––––––––––––– Swift Package Manager –––––––––––––––––––––––––––––––
+
+Packages/
+Package.pins
+Package.resolved
+.build/
+.swiftpm
+
 # ––––––––––––––––––––––––––––– Build generated –––––––––––––––––––––––––––––
 
 build/
@@ -15,30 +34,6 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-# ––––––––––––––––––––––––––– Obj-C/Swift specific ––––––––––––––––––––––––––
-
-*.hmap
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-# ––––––––––––––––––––––––––––––– Playgrounds –––––––––––––––––––––––––––––––
-
-timeline.xctimeline
-playground.xcworkspace
-
-# Swift Package Manager
-
-Packages/
-Package.pins
-Package.resolved
-.build/
-.swiftpm
-
-# –––––––––––––––––––––––––––––––– CocoaPods ––––––––––––––––––––––––––––––––
-
-Pods/
-
 # –––––––––––––––––––––––––––––––– Fastlane –––––––––––––––––––––––––––––––––
 # It is recommended to not store the screenshots in the git repo. Instead, 
 # use fastlane to re-generate the screenshots whenever they are needed.
@@ -50,6 +45,23 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
+# ––––––––––––––––––––––––––– Obj-C/Swift specific ––––––––––––––––––––––––––
+
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# –––––––––––––––––––––––––––––––– CocoaPods ––––––––––––––––––––––––––––––––
+
+Pods/
+
+# ––––––––––––––––––––––––––––––– Playgrounds –––––––––––––––––––––––––––––––
+
+timeline.xctimeline
+playground.xcworkspace
+
+
 # –––––––––––––––––––––––––––––––––– Other ––––––––––––––––––––––––––––––––––
 
 *.moved-aside
@@ -57,10 +69,3 @@ fastlane/test_output
 *.xcscmblueprint
 .DS_Store
 .vscode
-
-# ––––––––––––––––––––––––––––––––– Generated ––––––––––––––––––––––––––––––––––
-
-*.xcodeproj
-*.xcworkspace
-Sources/Resources/Resources.generated.swift
-iOS/Info.plist

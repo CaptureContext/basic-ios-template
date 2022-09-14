@@ -10,11 +10,32 @@ public final class MainViewController: UITabBarController {
       [
         UIHostingController(
           rootView: VStack {
-            Image.resource(.usgsUnsplash)
-              .resizable()
-              .aspectRatio(1, contentMode: .fill)
-              .frame(width: 200, height: 200)
-              .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            HStack {
+                Image.resource(.usgsUnsplash)
+                  .resizable()
+                  .aspectRatio(1, contentMode: .fill)
+                  .frame(width: 120, height: 120)
+                  .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                  .overlay(Color.black.opacity(0.1))
+                  .overlay(
+                    Text("shared\nresource")
+                      .foregroundColor(.white)
+                      .multilineTextAlignment(.center)
+                      .font(.system(size: 12, weight: .regular, design: .monospaced))
+                  )
+                Image.resource(.usgsUnsplash_2)
+                  .resizable()
+                  .aspectRatio(1, contentMode: .fill)
+                  .frame(width: 120, height: 120)
+                  .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                  .overlay(Color.black.opacity(0.1))
+                  .overlay(
+                    Text("local\nresource")
+                      .foregroundColor(.white)
+                      .multilineTextAlignment(.center)
+                      .font(.system(size: 12, weight: .regular, design: .monospaced))
+                  )
+            }
             Text("First")
               .fontWeight(.semibold)
               .foregroundColor(Color.white)

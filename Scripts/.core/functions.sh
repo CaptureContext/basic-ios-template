@@ -54,6 +54,22 @@ function print_error() {
   echo -e "\n❌ ${BOLD}${RED}${1}${RESET}\n"
 }
 
+function _print_info() {
+  echo -e "ℹ️  ${BOLD}${PURPLE}${1}${RESET}"
+}
+
+function _print_success() {
+  echo -e "✅ ${BOLD}${GREEN}${1}${RESET}"
+}
+
+function _print_warning() {
+  echo -e "⚠️  ${BOLD}${YELLOW}${1}${RESET}"
+}
+
+function _print_error() {
+  echo -e "❌ ${BOLD}${RED}${1}${RESET}"
+}
+
 function is_installed() {
   [ `command -v "$1"` 2>/dev/null ] && echo true || echo false
 }
@@ -69,7 +85,7 @@ function build_swift_product() {
     print_error "PRODUCT NAME SHOULD BE PASSED"
     return $ERROR_CODE
   fi
-  swift build --product=$product_name -c release --disable-sandbox
+  swift build --product=$product_name -c release --disable-sandbox --build-path '.build'
 }
 
 function force_cd() {

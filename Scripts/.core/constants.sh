@@ -9,5 +9,5 @@ fi
 
 # ––––––––––––––––––––––––––– CONSTANTS –––––––––––––––––––––––––
 
-TOOLS_INSTALL_PATH="${HOME}/.local_cli_tools"
+TOOLS_INSTALL_PATH="$( cd "$(dirname "$0")" && pwd )/.bin"
 INSTALLERS_PATH="${TOOLS_INSTALL_PATH}/.installers"

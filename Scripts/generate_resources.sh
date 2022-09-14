@@ -5,16 +5,16 @@ SCRIPT_DIR_PATH="$( cd "$(dirname "$0")" && pwd )"
 source "${SCRIPT_DIR_PATH}/.core/functions.sh"
 source "${SCRIPT_DIR_PATH}/.core/constants.sh"
 
-# CONSTANTS
-TOOL="${TOOLS_INSTALL_PATH}/spmgen"
+# FUNCTIONS
+function generate_resources() {
+  local target_folder_name="$1"
+  if [ -z "$target_folder_name" ]; then
+    print_error "PRODUCT NAME SHOULD BE PASSED"
+    return $ERROR_CODE
+  fi
+  ${SCRIPT_DIR_PATH}/generate_target_resources.sh ${target_folder_name}
+}
 
-# ––––––––––––––––––––––––––– SCRIPT –––––––––––––––––––––––––––
-
-if ! $( is_installed "${TOOL}" ); then "${SCRIPT_DIR_PATH}/install_spmgen.sh"; fi
-
-"$TOOL" resources "${SCRIPT_DIR_PATH}/../Sources/Resources/Resources" \
-  --output "${SCRIPT_DIR_PATH}/../Sources/Resources/Resources.generated.swift" \
-  --indentor " " \
-  --tab-size 2
-
-print_success "Did generate resources"
+# RESOURCES GENERATION
+generate_resources "Resources"
+generate_resources "MainFeature"

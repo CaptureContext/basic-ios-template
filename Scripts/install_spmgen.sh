@@ -10,7 +10,7 @@ source "${SCRIPT_DIR_PATH}/.core/constants.sh"
 # CONFIG
 TOOL_NAME="spmgen"
 TOOL_OWNER="capturecontext"
-TOOL_VERSION="2.0.0"
+TOOL_VERSION="2.1.1"
 
 # CONSTANTS
 TOOL_INSTALL_PATH="${TOOLS_INSTALL_PATH}/${TOOL_NAME}-tmp"
