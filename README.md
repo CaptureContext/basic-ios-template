@@ -1,6 +1,6 @@
 # basic-ios-template
 
- [![SwiftPM 5.6](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
+ [![SwiftPM 6.0](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
 
 ### Getting started
 
@@ -23,11 +23,12 @@ cd App
 
 > You can choose any name or avoid nesting, but we recommend to follow the example (including the case) to get the best result 😌
 
-3. Rename [project.yml](project.yml), [.config/project.yml](.config/project.yml) and [.config/preview.yml](.config/preview.yml) contents accordingly to your needs
+3. Rename [project.yml](project.yml) and [Previews/.preview.yml](Previews/.preview.yml) contents accordingly to your needs
 
 - bundleIdPrefix: `org-domain.org-host` to your bundleID prefix
-- targets: `MyTarget` to `<your-app-name>-ios` 
-- info.properties.CFBundleDisplayName: `MyApp` to `<YourAppName>`
+- targets: `template-app-universal` to `<your-app-name>-universal`
+- info.properties.CFBundleDisplayName: `TemplateApp` to `<YourAppName>`
+- see [xcodegen](https://github.com/yonaskolb/XcodeGen) for more configuration info
 
 4. Bootstrap the environment
 
@@ -42,7 +43,6 @@ Than you can commit changes and you are ready for the actual development 😎
 ```bash
 open Package.xcworkspace
 ```
-
 
 ### Structure
 

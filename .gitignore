@@ -3,7 +3,7 @@
 *.xcodeproj
 *.xcworkspace
 Sources/**/Resources.generated.swift
-iOS/Info.plist
+**/**/Info.plist
 
 # –––––––––––––––––––––––––––––––– Scripts –––––––––––––––––––––––––––––––––
 
@@ -69,3 +69,4 @@ playground.xcworkspace
 *.xcscmblueprint
 .DS_Store
 .vscode
+Scripts/.venv

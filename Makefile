@@ -1,30 +1,18 @@
 bootstrap:
-	@make install_xcodegen
-	@make install_spmgen
+	@make venv
 	@make project
 	@make workspace
-	@make resources
-
-remove_cli_tools:
-	@chmod +x ./scripts/remove_cli_tools.sh
-	@./scripts/remove_cli_tools.sh
-
-install_spmgen:
-	@chmod +x ./scripts/install_spmgen.sh
-	@./scripts/install_spmgen.sh
-
-install_xcodegen:
-	@chmod +x ./scripts/install_xcodegen.sh
-	@./scripts/install_xcodegen.sh
-
-resources:
-	@chmod +x ./scripts/generate_resources.sh
-	@./scripts/generate_resources.sh
 
 workspace:
-	@chmod +x ./scripts/generate_xcworkspace.sh
-	@./scripts/generate_xcworkspace.sh
+	@make _run module=Scripts.generate_xcworkspace
 
 project:
-	@chmod +x ./scripts/generate_xcodeproj.sh
-	@./scripts/generate_xcodeproj.sh
+	@make _run module=Scripts.generate_xcodeproj
+
+venv:
+	@rm -rf scripts/.venv
+	@cd scripts && python3 -m venv .venv
+
+_run:
+	@chmod +x $(CURDIR)/Scripts/.venv/bin/activate && $(CURDIR)/Scripts/.venv/bin/activate
+	@chmod +x "$(CURDIR)/Scripts/.venv/bin/python" && "$(CURDIR)/Scripts/.venv/bin/python" -m $(module)

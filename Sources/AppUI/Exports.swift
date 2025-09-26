@@ -1,2 +1,2 @@
 @_exported import LocalUIExtensions
-@_exported import Resources
+@_exported import _PackageResources

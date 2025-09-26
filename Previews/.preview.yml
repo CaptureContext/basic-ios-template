@@ -1,0 +1,46 @@
+options:
+  bundleIdPrefix: org-domain.org-host
+
+targetTemplates:
+  preview-ios:
+    type: application
+    platform: iOS
+    deploymentTarget: 26.0
+    settings:
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: "NO"
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: "NO"
+        SWIFT_VERSION: 6.0
+    createIntermediateGroups: true
+    sources:
+      - path: Shared/iOS
+        group: Previews/Shared
+      - path: ${previewTarget}/iOS
+        group: Previews/${previewTarget}
+      - path: ${previewTarget}/Resources
+        optional: true
+        group: Previews/${previewTarget}
+    dependencies:
+      - package: ios-package
+        product: ${previewTarget}
+      - package: ios-package
+        product: AppUI
+    info:
+      path: ${previewTarget}/iOS/Info.plist
+      properties:
+        CFBundleDisplayName: ${previewTarget}
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchStoryboardName: LaunchScreen
+        NSCameraUsageDescription: "We need camera access for Debugging"
+        NSMicrophoneUsageDescription: "We need micro access for Debugging"
+        NSPhotoLibraryAddUsageDescription: "We need media write access for Debugging"
+        NSPhotoLibraryUsageDescription: "We need media read access for Debugging"
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: ${target_name}.SceneDelegate

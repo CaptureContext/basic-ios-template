@@ -1,32 +1,60 @@
 name: Project
 
 include:
-  - .configs/project.yml
   - Previews/previews.yml
+options:
+  bundleIdPrefix: org-domain.org-host
 
-settings:
-  MARKETING_VERSION: "1.0.0"
-  CURRENT_PROJECT_VERSION: "1"
+packages:
+  ios-package:
+    path: ./
+    excludeFromProject: true
 
 targets:
-  MyTarget:
+  template-app-universal:
+    templates:
+      - multiplatform-ios
+    templateAttributes:
+      app_name: "TemplateApp"
+      app_version: "1.0.0"
+      build_number: "1"
+    entitlements:
+      path: Containers/iOS/app.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+    info:
+      path: Containers/iOS/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: $(PRODUCT_BUNDLE_IDENTIFIER)
+            CFBundleURLSchemes:
+              - myapp
+
+targetTemplates:
+  multiplatform-ios:
     type: application
     platform: iOS
-    deploymentTarget: 13.0
+    deploymentTarget: 26.0
+    settings:
+      MARKETING_VERSION: ${app_version}
+      CURRENT_PROJECT_VERSION: ${build_number}
+      TARGETED_DEVICE_FAMILY: "1,2"
+      SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: "YES"
+      SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: "NO"
+      SWIFT_VERSION: 6.0
     sources:
-        - path: iOS
+      - path: Containers/iOS
     dependencies:
-      - package: app-package
+      - package: ios-package
         product: AppFeature
-    preBuildScripts:
-      - name: Generate resources boilerplate
-        script: "\"$SRCROOT/Scripts/generate_resources.sh\"\n"
     info:
-      path: iOS/Info.plist
+      path: Containers/iOS/Info.plist
       properties:
-        CFBundleDisplayName: MyApp
+        CFBundleDisplayName: ${app_name}
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UILaunchStoryboardName: LaunchScreen
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false

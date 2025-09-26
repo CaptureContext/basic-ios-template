@@ -1,11 +1,11 @@
 name: Previews
 
 include:
-  - ../.configs/preview.yml
+  - .preview.yml
 
 targets:
-  MainFeaturePreview:
+  MainFeaturePreview_iOS:
     templates: 
-      - PreviewApp
+      - preview-ios
     templateAttributes:
-      preview_package: MainFeature
+      previewTarget: MainFeature
