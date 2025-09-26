@@ -2,6 +2,9 @@
 
  [![SwiftPM 5.6](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
 
+> [!NOTE]
+> _This repo is a bit outdated, but I'm working on an update here [`branch:wip/v2`](https://github.com/CaptureContext/basic-ios-template/tree/wip/v2)_
+
 ### Getting started
 
 1. Fork the repo as a template.
