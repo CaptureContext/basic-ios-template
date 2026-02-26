@@ -1,6 +1,6 @@
 # basic-ios-template
 
- [![SwiftPM 6.0](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
+ [![SwiftPM 6.2](https://img.shields.io/badge/swiftpm-5.6-ED523F.svg?style=flat)](https://swift.org/download/) [![@maximkrouk](https://img.shields.io/badge/contact-@capture__context-1DA1F2.svg?style=flat&logo=twitter)](https://twitter.com/capture_context)
 
 ### Getting started
 
@@ -68,7 +68,7 @@ Sources { // Main modules
 
 
 
-> **Note:**
+> [!NOTE]
 >
 > _Scripts can be improved later so we advice you to keep an eye on the repo and a tracking reference to our `main` branch to keep your infrastructure up to date_ 🚀
 
@@ -76,23 +76,21 @@ Sources { // Main modules
 
 ### Recommended dependencies
 
-- https://github.com/pointfreeco/swift-composable-architecture
-- https://github.com/pointfreeco/swift-identified-collections
-- https://github.com/pointfreeco/swift-parsing
 - https://github.com/capturecontext/swift-declarative-configuration
-- https://github.com/capturecontext/swift-composable-environment
-- https://github.com/capturecontext/swift-standard-clients
+- https://github.com/capturecontext/swift-package-resources
+- https://github.com/capturecontext/package-resources-cli
 - https://github.com/capturecontext/swift-capture
-- https://github.com/capturecontext/spmgen
-- https://github.com/snapkit/snapkit
+- https://github.com/capturecontext/cocoa-aliases
+- https://github.com/pointfreeco/swift-parsing
+  
+- https://github.com/pointfreeco/swift-composable-architecture
+  - https://github.com/pointfreeco/swift-identified-collections
+  - https://github.com/pointfreeco/swift-concurrency-extras
+  - https://github.com/pointfreeco/swift-dependencies
+  - https://github.com/pointfreeco/swift-sharing
+  - https://github.com/capturecontext/swift-sharing-extensions
 
 > Will be recommended later (yet in alpha or beta)
 > - https://github.com/capturecontext/composable-architecture-extensions
 > - https://github.com/capturecontext/swift-foundation-extensions
 > - https://github.com/capturecontext/swift-cocoa-extensions
-> - https://github.com/capturecontext/combine-extensions
-> - https://github.com/capturecontext/combine-cocoa
-> - https://github.com/capturecontext/combine-cocoa-navigation
-> - https://github.com/capturecontext/swift-prelude
-> - https://github.com/capturecontext/swift-generic-color
-> - https://github.com/capturecontext/swift-palette
